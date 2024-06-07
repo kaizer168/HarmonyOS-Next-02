@@ -2,6 +2,7 @@
 Debug 1: 删除选中的1个任务, 会把没选中的其他任务也删除  
 修改代码： 
 Tasks.ets  
+        
       del(selected: boolean[]) {  
         //对任务组进行筛选， 只取index序号  
         this._allData = this._allData.filter((_ ,index) => {  
@@ -39,6 +40,7 @@ TaskItem.ets
       }  
       
 TaskList.ets:  
+        
       } else { //不在编辑模式时,显示编辑文字按钮  
         Text($r('app.string.edit_button'))  
           .operateTextStyle($r('app.color.main_blue'))  
