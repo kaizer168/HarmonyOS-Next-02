@@ -16,37 +16,52 @@ Debug 2: 编辑时如果选中全部个别任务, 全选不会自动更新为选
 修改代码： 
 TaskItem.ets  
         
-      @Link selectAll: boolean  //把这个参数传进来再回传  
+      @Link selectAll: boolean  //把这个全选参数传进来再回传  
   
-      if (this.isEditMode) { //如果处于编辑模式  
+      if (this.isEditMode) {   
         Column() {  
-          Checkbox() //单选框  
+          Checkbox()   
             .margin({right: $r('app.float.list_padding')})  
             .width(CommonConstants.CHECKBOX_WIDTH)  
             .selectedColor($r('app.color.main_blue'))  
-            .onChange((isChecked) => { //点击后，给任务选择状态赋值  
+            .onChange((isChecked) => {   
               this.selectedTasks[this.index] = isChecked  
               if (!this.selectedTasks.includes(false)){  //如果选中的数组里没有false  
-                this.selectAll = true;  //就把全选设为true      
+                this.selectAll = true;  //就把全选参数设为true      
               }  
               else {  
-                this.selectAll = false; //否则就把全选设为false              
+                this.selectAll = false; //否则就把全选参数设为false              
               }  
             })  
-              //选中状态，与点击绑定  
+                
             .select(this.selectedTasks[this.index])  
         }  
         .height(CommonConstants.FULL_HEIGHT)  
-        .justifyContent(FlexAlign.Center) //列元素居中  
+        .justifyContent(FlexAlign.Center)   
       }  
       
 TaskList.ets:  
         
-      } else { //不在编辑模式时,显示编辑文字按钮  
+      } else {   
         Text($r('app.string.edit_button'))  
           .operateTextStyle($r('app.color.main_blue'))  
           .onClick(() => {  
-            this.isEditMode = true //启用编辑模式  
-            this.selectedTasks = this.tasks.map(() => false)  //把数组设为全false  
+            this.isEditMode = true   
+            this.selectedTasks = this.tasks.map(() => false)  //启用编辑模式时，把选中数组设为全false  
           })  
       }  
+
+      List({space: CommonConstants.LIST_SPACE}){
+        ForEach(this.tasks,(item: Task,index) => {
+          ListItem() {
+            TaskItem({
+              task: item, 
+              index: index,
+              isEditMode: this.isEditMode,
+              selectedTasks: this.selectedTasks, 
+              clickIndex: this.clickIndex, 
+              selectAll: this.selectAll //加这个全选参数(双向)
+            })
+          }
+        })
+      }
