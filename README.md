@@ -2,16 +2,16 @@
 Debug 1: 删除选中的1个任务, 会把没选中的其他任务也删除  
 修改代码： 
 Tasks.ets  
-  del(selected: boolean[]) {  
-    //对任务组进行筛选， 只取index序号  
-    this._allData = this._allData.filter((_ ,index) => {  
-      //如果某一项的序号，在选中任务组中存在，则排除掉  
-      //return !selected.includes(selected[index])  
-      return !selected[index]  //加这一行代替上一行
-    })  
-  }  
+      del(selected: boolean[]) {  
+        //对任务组进行筛选， 只取index序号  
+        this._allData = this._allData.filter((_ ,index) => {  
+          //如果某一项的序号，在选中任务组中存在，则排除掉  
+          //return !selected.includes(selected[index])  
+          return !selected[index]  //加这一行代替上一行  
+        })  
+      }  
 
-Debug 2: 编辑时如果选中全部个别任务, 全选不会自动更新选中  
+Debug 2: 编辑时如果选中全部个别任务, 全选不会自动更新为选中  
 修改代码： 
 TaskItem.ets  
       @Link selectAll: boolean  //把这个参数传进来再回传  
@@ -39,11 +39,11 @@ TaskItem.ets
       }  
       
 TaskList.ets:  
-          } else { //不在编辑模式时,显示编辑文字按钮  
-            Text($r('app.string.edit_button'))  
-              .operateTextStyle($r('app.color.main_blue'))  
-              .onClick(() => {  
-                this.isEditMode = true //启用编辑模式  
-                this.selectedTasks = this.tasks.map(() => false)  //把数组设为全false  
-              })  
-          }  
+      } else { //不在编辑模式时,显示编辑文字按钮  
+        Text($r('app.string.edit_button'))  
+          .operateTextStyle($r('app.color.main_blue'))  
+          .onClick(() => {  
+            this.isEditMode = true //启用编辑模式  
+            this.selectedTasks = this.tasks.map(() => false)  //把数组设为全false  
+          })  
+      }  
