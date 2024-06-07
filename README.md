@@ -1,6 +1,6 @@
 # 排除「任务进度管理」bug  
 Debug 1: 删除选中的1个任务, 会把没选中的其他任务也删除  
-修改代码： 
+修改代码：  
 Tasks.ets  
         
       del(selected: boolean[]) {  
@@ -13,7 +13,7 @@ Tasks.ets
       }  
 
 Debug 2: 编辑时如果选中全部个别任务, 全选不会自动更新为选中  
-修改代码： 
+修改代码：  
 TaskItem.ets  
         
       @Link selectAll: boolean  //把这个全选参数传进来再回传  
