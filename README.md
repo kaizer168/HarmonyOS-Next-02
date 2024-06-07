@@ -15,6 +15,7 @@ Tasks.ets
 Debug 2: 编辑时如果选中全部个别任务, 全选不会自动更新为选中  
 修改代码： 
 TaskItem.ets  
+        
       @Link selectAll: boolean  //把这个参数传进来再回传  
   
       if (this.isEditMode) { //如果处于编辑模式  
