@@ -1,0 +1,26 @@
+{
+	"app": {
+		"bundleName": "com.ohos.hypium",
+		"debug": true,
+		"versionCode": 1000000,
+		"versionName": "1.0.0",
+		"minAPIVersion": 10,
+		"targetAPIVersion": 10,
+		"apiReleaseType": "Release",
+		"compileSdkVersion": "4.0.10.16",
+		"compileSdkType": "OpenHarmony",
+		"bundleType": "app"
+	},
+	"module": {
+		"name": "hypium",
+		"type": "har",
+		"deviceTypes": [
+			"default",
+			"tablet",
+			"tv",
+			"wearable",
+			"car"
+		],
+		"installationFree": false
+	}
+}
