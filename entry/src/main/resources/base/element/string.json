@@ -1,0 +1,76 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "任务管理"
+    },
+    {
+      "name": "title",
+      "value": "任务管理"
+    },
+    {
+      "name": "add_task",
+      "value": "+"
+    },
+    {
+      "name": "target_name",
+      "value": "2024开发任务"
+    },
+    {
+      "name": "target_info",
+      "value": "高质量完成开发任务交付"
+    },
+    {
+      "name": "overall_progress",
+      "value": "总进度"
+    },
+    {
+      "name": "add_task_dialog",
+      "value": "添加任务"
+    },
+    {
+      "name": "latest_updateTime",
+      "value": "最近更新: "
+    },
+    {
+      "name": "sub_goals",
+      "value": "任务"
+    },
+    {
+      "name": "cancel_button",
+      "value": "取消"
+    },
+    {
+      "name": "confirm_button",
+      "value": "确定"
+    },
+    {
+      "name": "delete_button",
+      "value": "删除"
+    },
+    {
+      "name": "edit_button",
+      "value": "编辑"
+    },
+    {
+      "name": "select_all_button",
+      "value": "全选"
+    },
+    {
+      "name": "cannot_input_empty",
+      "value": "名称不能为空！"
+    },
+    {
+      "name": "input_target_name",
+      "value": "输入名称"
+    }
+  ]
+}
